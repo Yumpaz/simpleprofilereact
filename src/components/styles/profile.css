@@ -1,0 +1,48 @@
+.details {
+  margin: auto;
+  max-width: 100%;
+}
+
+.profilebottom {
+  margin: auto;
+  max-width: 50%;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.bordered {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  border-color: grey;
+  border-width: 10px 10px;
+  border-style: double;
+}
+
+.container {
+  max-width: 100%;
+  padding-top: 20px;
+  background: linear-gradient(to bottom, rgb(218, 216, 216) 60%, white 50%);
+}
+
+p#texto {
+  color: grey;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+p#email {
+  color: black;
+  font-size: 40px;
+  text-align: center;
+}
