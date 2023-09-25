@@ -8,27 +8,51 @@ import itelephone from "./images/icons/telephone.png";
 import ipadlock from "./images/icons/padlock.png";
 import "./styles/profile.css";
 
-class profile extends React.Component {
-  state = {};
+export class profile extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      text: "Hi, my name is",
+      info: this.props.user.name
+    }
+  }
   render() {
-    const { email } = this.props.user;
+    const { name, email, files, location, telephone, padlock } = this.props.user;
     const iprofileClick = () => {
-      console.log("Click profile");
+      this.setState({
+        text: "Hi, my name is",
+        info: name
+      });
     };
     const imailClick = () => {
-      console.log("Click mail");
+      this.setState({
+        text: "My email address is",
+        info: email
+      })
     };
     const ifilesClick = () => {
-      console.log("Click files");
+      this.setState({
+        text: "This is the",
+        info: files
+      })
     };
     const ilocationClick = () => {
-      console.log("Click location");
+      this.setState({
+        text: "This is the",
+        info: location
+      })
     };
     const itelephoneClick = () => {
-      console.log("Click telephone");
+      this.setState({
+        text: "My phone number is",
+        info: telephone,
+      })
     };
     const ipadlockClick = () => {
-      console.log("Click padlock");
+      this.setState({
+        text: "This is the",
+        info: padlock
+      })
     };
     return (
       <div className="details">
@@ -45,9 +69,9 @@ class profile extends React.Component {
         </div>
         <div className="profilebottom">
           <p id="texto">
-            <strong>My email address is</strong>
+            <strong>{this.state.text}</strong>
           </p>
-          <p id="email">{email}</p>
+          <p id="info">{this.state.info}</p>
           <div className="iconContainer">
             <img
               src={iprofile}
@@ -60,6 +84,7 @@ class profile extends React.Component {
             <img
               src={imail}
               alt="Icon User"
+              onClick={imailClick}
               width="30"
               height="30"
               className="selectable"
@@ -67,6 +92,7 @@ class profile extends React.Component {
             <img
               src={ifiles}
               alt="Icon User"
+              onClick={ifilesClick}
               width="30"
               height="30"
               className="selectable"
@@ -74,6 +100,7 @@ class profile extends React.Component {
             <img
               src={ilocation}
               alt="Icon User"
+              onClick={ilocationClick}
               width="30"
               height="30"
               className="selectable"
@@ -81,6 +108,7 @@ class profile extends React.Component {
             <img
               src={itelephone}
               alt="Icon User"
+              onClick={itelephoneClick}
               width="30"
               height="30"
               className="selectable"
@@ -88,6 +116,7 @@ class profile extends React.Component {
             <img
               src={ipadlock}
               alt="Icon User"
+              onClick={ipadlockClick}
               width="30"
               height="30"
               className="selectable"
