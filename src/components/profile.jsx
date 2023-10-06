@@ -1,4 +1,4 @@
-import React from "react";
+import React, {usetState, useEffect} from "react";
 import foto from "./images/perfil.jpg";
 import iprofile from "./images/icons/user.png";
 import imail from "./images/icons/mail.png";
@@ -16,6 +16,7 @@ export class profile extends React.Component {
       info: this.props.user.name
     }
   }
+  
   render() {
     const { name, email, files, location, telephone, padlock } = this.props.user;
     const iprofileClick = () => {
@@ -32,13 +33,13 @@ export class profile extends React.Component {
     };
     const ifilesClick = () => {
       this.setState({
-        text: "This is the",
+        text: "This is my personal info",
         info: files
       })
     };
     const ilocationClick = () => {
       this.setState({
-        text: "This is the",
+        text: "This is my location",
         info: location
       })
     };
@@ -50,7 +51,7 @@ export class profile extends React.Component {
     };
     const ipadlockClick = () => {
       this.setState({
-        text: "This is the",
+        text: "This is my user",
         info: padlock
       })
     };
